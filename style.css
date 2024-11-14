@@ -1,0 +1,257 @@
+/* General Page Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #121212; /* Dark background for video feel */
+    color: #fff;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Smooth Scroll */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Navigation Bar */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 20px;
+    background: transparent;
+    z-index: 1000;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+    transition: background-color 0.3s ease-in-out;
+}
+
+nav.scrolled {
+    background: rgba(18, 18, 18, 0.85);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 10px 20px;
+    transition: all 0.3s ease;
+}
+
+nav a:hover {
+    color: #FFDD57;
+    transform: scale(1.1);
+}
+
+/* Hero Section (Video-like) */
+.hero {
+    position: relative;
+    height: 100vh;
+    background: url('https://source.unsplash.com/1600x900/?city,technology') no-repeat center center/cover;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+    animation: heroBackground 30s infinite linear;
+}
+
+.hero h1 {
+    font-size: 5rem;
+    font-weight: 900;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    text-shadow: 3px 3px 20px rgba(0, 0, 0, 0.7);
+    animation: fadeInUp 1.5s ease-out 0.3s forwards;
+}
+
+.hero p {
+    font-size: 1.4rem;
+    font-weight: 300;
+    max-width: 600px;
+    margin: 20px auto;
+    text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    animation: fadeInUp 1.5s ease-out 0.6s forwards;
+}
+
+.hero .button {
+    background-color: #FFDD57;
+    color: #121212;
+    padding: 12px 35px;
+    font-weight: 700;
+    border-radius: 50px;
+    text-decoration: none;
+    text-transform: uppercase;
+    margin-top: 30px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    animation: fadeInUp 1.5s ease-out 1s forwards;
+}
+
+.hero .button:hover {
+    background-color: #00C9FF;
+    transform: translateY(-5px);
+}
+
+/* About Section with Motion */
+section {
+    padding: 80px 20px;
+    background-color: #181818;
+    text-align: center;
+    opacity: 0;
+    animation: slideInUp 1.5s ease-out 1s forwards;
+}
+
+section h1 {
+    font-size: 3rem;
+    color: #FFDD57;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+    font-weight: 900;
+}
+
+section p {
+    font-size: 1.2rem;
+    color: #bbb;
+    line-height: 1.8;
+    margin-bottom: 40px;
+}
+
+section:hover {
+    transform: translateY(-20px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+}
+
+/* Contact Section - Floating Card Animation */
+.contact-info {
+    padding: 40px;
+    background: #2d2d2d;
+    border-radius: 15px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    animation: fadeInUp 1.5s ease-out 1.3s forwards;
+}
+
+.contact-info p {
+    font-size: 1.2rem;
+    color: #bbb;
+    margin-bottom: 15px;
+}
+
+.contact-info a {
+    color: #FFDD57;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+    color: #00C9FF;
+}
+
+/* Footer */
+footer {
+    background-color: #121212;
+    padding: 40px;
+    color: #fff;
+    text-align: center;
+    font-size: 1.1rem;
+    margin-top: 100px;
+    opacity: 0;
+    animation: fadeInUp 1.5s ease-out 1.5s forwards;
+}
+
+footer a {
+    color: #FFDD57;
+    text-decoration: none;
+    font-weight: 700;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #fff;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Hero Background Animation (to mimic video motion) */
+@keyframes heroBackground {
+    0% {
+        background-position: center center;
+    }
+    100% {
+        background-position: right top;
+    }
+}
+
+/* Parallax Effect for Scroll (Video-like Depth) */
+@media (min-width: 768px) {
+    .hero {
+        background-attachment: fixed;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav a {
+        margin: 10px 0;
+    }
+
+    section {
+        padding: 60px 20px;
+    }
+
+    .hero h1 {
+        font-size: 3rem;
+    }
+
+    .hero p {
+        font-size: 1.1rem;
+    }
+
+    .hero .button {
+        padding: 10px 25px;
+    }
+}
